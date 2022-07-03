@@ -21,11 +21,15 @@ const StyledFormCheckboxInput = styled.input.attrs({ type: "checkbox" })`
   background-color: purple;
 `;
 
+//When submit input type is used, passes event and function to be run
+//Prevents default action of submit button, then runs function passed
 const submitFunction = (e:any, passedFunction:Function) =>{
   e.preventDefault();
   passedFunction();
 }
 
+//Determines which type of input is required via props.type
+//Connects label to input type, updates submit function if required, returns requested input type
 const FormInput = (props:any) => {
   switch(props.type){
     case "text":
