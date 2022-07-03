@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 //Wraps navigation bar, sidebar, footer, content
 const Container = styled.div`
+    background-color:#faf9f4;
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     overflow:visible;
     height: 100vh;
 `
