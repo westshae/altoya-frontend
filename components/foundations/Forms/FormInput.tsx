@@ -21,6 +21,11 @@ const StyledFormCheckboxInput = styled.input.attrs({ type: "checkbox" })`
   background-color: purple;
 `;
 
+const submitFunction = (e:any, passedFunction:Function) =>{
+  e.preventDefault();
+  passedFunction();
+}
+
 const FormInput = (props:any) => {
   switch(props.type){
     case "text":
@@ -35,7 +40,7 @@ const FormInput = (props:any) => {
         return (
           <InputGroup>
             <StyledLabel htmlFor={props.id}>{props.label}</StyledLabel>
-            <StyledFormSubmitInput id={props.id}/>
+            <StyledFormSubmitInput id={props.id} onClick={(e) => submitFunction(e,props.submitFunction)}/>
           </InputGroup>
         );
       
